@@ -5,30 +5,30 @@ class Header extends React.Component {
     constructor(props) {
         super(props)
         this.states = {
-            ArtistsList: []
+            ArtistsData: []
         }
     }
 
     getList = () => {
+        let self = this
         artistsList().then(res => {
             this.setState({
-                ArtistsList: res
+                ArtistsData: res
             })
-            console.log(res)
+            console.log(self.state.ArtistsList)
         })
     }
 
     componentDidMount() {
         this.getList()
+        console.log(this.state.ArtistsData)
     }
 
     render() {
-        let { ArtistsList } = this.state
+        // const items = this.state.ArtistsData.mao(item => <li>{item}</li>)
         return <div className='display-list'>
             <ul>
-                {ArtistsList.map((item, index) => (
-                    <li key={index}>{item}</li>
-                ))}
+                {/* {items} */}
             </ul>
         </div>
     }
