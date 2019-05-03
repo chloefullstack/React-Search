@@ -1,7 +1,7 @@
 import React from 'react';
 import './DisplayList.css'
 import artistsList from '../SearchData/data.js'
-class Header extends React.Component {
+class DisplayList extends React.Component {
     constructor(props) {
         super(props)
         this.states = {
@@ -10,12 +10,11 @@ class Header extends React.Component {
     }
 
     getList = () => {
-        let self = this
+
         artistsList().then(res => {
             this.setState({
                 ArtistsData: res
             })
-            console.log(self.state.ArtistsData)
         })
     }
 
@@ -33,4 +32,4 @@ class Header extends React.Component {
         </div>
     }
 }
-export default Header;
+export default DisplayList;
