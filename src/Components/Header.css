@@ -1,0 +1,21 @@
+.header {
+    border: 2px solid white;
+    background-color: #00BFB3;
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 50px;
+    text-decoration: underline;
+}
+
+.description {
+    font-size: 25px;
+    padding: 20px;
+}
