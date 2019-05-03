@@ -23,8 +23,9 @@ class DisplayList extends React.Component {
     }
 
     render() {
-        const items = this.state.ArtistsData.map(item => <li>{item}</li>)
+        const items = this.state.ArtistsData.map((item, index) => <li key={index}>{item}</li>)
         return <div className='display-list'>
+            <div>{this.props.search}</div>
             <ul>
                 {items}
             </ul>
