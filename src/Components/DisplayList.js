@@ -20,14 +20,13 @@ class DisplayList extends React.Component {
 
     componentDidMount() {
         this.getList()
-        console.log(this.state.ArtistsData)
     }
 
     render() {
-        // const items = this.state.ArtistsData.mao(item => <li>{item}</li>)
+        const items = this.state.ArtistsData.map(item => <li>{item}</li>)
         return <div className='display-list'>
             <ul>
-                {/* {items} */}
+                {items}
             </ul>
         </div>
     }
