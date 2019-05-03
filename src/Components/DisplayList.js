@@ -15,7 +15,7 @@ class Header extends React.Component {
             this.setState({
                 ArtistsData: res
             })
-            console.log(self.state.ArtistsList)
+            console.log(self.state.ArtistsData)
         })
     }
 
