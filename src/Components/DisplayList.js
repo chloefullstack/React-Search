@@ -4,7 +4,7 @@ import artistsList from '../SearchData/data.js'
 class DisplayList extends React.Component {
     constructor(props) {
         super(props)
-        this.states = {
+        this.state = {
             ArtistsData: []
         }
     }
