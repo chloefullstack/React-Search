@@ -10,12 +10,16 @@ class DisplayList extends React.Component {
     }
 
     getList = () => {
-
         artistsList().then(res => {
             this.setState({
-                ArtistsData: res
+            ArtistsData: res
             })
-        })
+        })}
+
+    filterList = (item) => {
+        return function(x) {
+            return x.toLowerCase().includes(item.toLowerCase() || !item)
+        }
     }
 
     componentDidMount() {
@@ -23,11 +27,13 @@ class DisplayList extends React.Component {
     }
 
     render() {
-        const items = this.state.ArtistsData.map((item, index) => <li key={index}>{item}</li>)
+        const {ArtistsData} = this.state;
+        const {search} = this.props
         return <div className='display-list'>
-            <div>{this.props.search}</div>
             <ul>
-                {items}
+                {ArtistsData.filter(this.filterList(search)).map((item, index) => 
+                    <li key={index}>{item}</li>)
+                }
             </ul>
         </div>
     }
